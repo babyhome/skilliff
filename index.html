@@ -56,22 +56,21 @@
 		}
 
 		function closed() {
+			liff.closeWindow();
 		}
 
 		async function scanCode() {
 
 			const result = await liff.scanCode();
 			document.getElementById("scanCode").append( result.value );
-			
+
 		}
 
 		function openWindow() {
-
 			liff.openWindow({
 				url: "https://line.me",
 				external: true
 			});
-
 		}
 
 		async function getFriendship() {
