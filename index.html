@@ -103,25 +103,36 @@
 
 		async function sendMsg() {
 			if( liff.getContext().type !== "none" ) {
-				// await liff.sendMessages([
-				// 	{
-				// 		"type": "sticker",
-				// 		"stickerId": 1,
-				// 		"packageId": 1
-				// 	},
-				// 	{
-				// 		"type": "sticker",
-				// 		"stickerId": 2,
-				// 		"packageId": 1
-				// 	}
-				// ]);
-				// alert( "Message Sent" );
 				await liff.sendMessages([
 					{
 						type: 'text',
 						text: "Hello, This send"
+					},
+					{
+						"type": 'flex',
+						"altText": "This is flex message",
+						"contents": {
+							"type": "bubble",
+							"direction": "ltr",
+							"styles": {
+								"header": {
+									"backgroundColor": "#ffaaaa",
+								},
+								"body": {
+									"backgroundColor": "#aaffaa",
+									"separator": true,
+									"separatorColor": "#efefef",
+								},
+								"footer": {
+									"backgroundColor": "#aaaaff"
+								}
+							},
+							"header": {},
+							"hero": {},
+							"body": {},
+							"footer": {}
+						}
 					}
-					
 				])
 				.then(() => {
 					alert( "Message Sent" );
