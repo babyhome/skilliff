@@ -4,9 +4,9 @@
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=0,viewport-fit=cover">
 	<title>My LIFF app</title>
+	<!-- <link rel="stylesheet" href="css/style.css" media="all"> -->
 	<script>
 		document.write('<link rel="stylesheet" href="css/style.css?cache=' + new Date().getTime() + '" media="all">')
-		
 	</script>
 </head>
 <body>
@@ -44,7 +44,7 @@
 	<script src="js/vconsole.min.js"></script>
 	<script>
 		var vConsole = new VConsole()
-		console.log( new Date().getTime() )
+		console.log("Hello World!")
 		errorPlease()
 	</script>
 
@@ -115,7 +115,21 @@
 						"packageId": 1
 					}
 				]);
-				alert( "Message Sent" );
+				// alert( "Message Sent" );
+				liff.sendMessages([
+					{
+						type: 'text',
+						text: "Hello, This send"
+					}
+					
+				])
+				.then(() => {
+					alert( "Message Sent" );
+					console.log( "Message Sent" );
+				})
+				.catch((err) => {
+					console.log( 'error', err );
+				})
 			}
 		}
 
