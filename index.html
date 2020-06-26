@@ -151,17 +151,18 @@
 		}
 
 		async function main() {
-			
-			document.getElementById("isLoggedIn").append( liff.isLoggedIn() )
-			if( liff.isLoggedIn() ) {
-				getEnvironment()
-				getUserProfile()
-				getContext()
-				getFriendship()
-				createUniversalLink()
-			} else {
-				liff.login();
-			}
+			liff.ready.then( () => {
+				document.getElementById("isLoggedIn").append( liff.isLoggedIn() )
+				if( liff.isLoggedIn() ) {
+					getEnvironment()
+					getUserProfile()
+					getContext()
+					getFriendship()
+					createUniversalLink()
+				} else {
+					liff.login();
+				}
+			})
 
 			await liff.init({ liffId: "1653794047-jGvkv4xg" })
 			
