@@ -103,20 +103,20 @@
 
 		async function sendMsg() {
 			if( liff.getContext().type !== "none" ) {
-				await liff.sendMessages([
-					{
-						"type": "sticker",
-						"stickerId": 1,
-						"packageId": 1
-					},
-					{
-						"type": "sticker",
-						"stickerId": 2,
-						"packageId": 1
-					}
-				]);
+				// await liff.sendMessages([
+				// 	{
+				// 		"type": "sticker",
+				// 		"stickerId": 1,
+				// 		"packageId": 1
+				// 	},
+				// 	{
+				// 		"type": "sticker",
+				// 		"stickerId": 2,
+				// 		"packageId": 1
+				// 	}
+				// ]);
 				// alert( "Message Sent" );
-				liff.sendMessages([
+				await liff.sendMessages([
 					{
 						type: 'text',
 						text: "Hello, This send"
